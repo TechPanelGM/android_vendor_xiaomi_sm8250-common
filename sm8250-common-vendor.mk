@@ -212,23 +212,18 @@ PRODUCT_PACKAGES += \
     libadm \
     libadpcmdec \
     libaudcal \
-    libbatterylistener \
     libbluetooth_audio_session_qti \
     libbluetooth_audio_session_qti_2_1 \
     libcapiv2svacnn \
     libcapiv2svarnn \
     libcapiv2vop \
-    libcomprcapture \
     libdrc \
     libdsd2pcm \
-    libexthwplugin \
     libfastcrc \
     libgcs-calwrapper \
     libgcs-ipc \
     libgcs-osal \
     libgcs \
-    libhdmiedid \
-    libhfp \
     liblistensoundmodel2 \
     libmm-hdcpmgr \
     libmmosal_vendor \
@@ -237,8 +232,6 @@ PRODUCT_PACKAGES += \
     libmulawdec \
     libqtigef \
     libsmwrapper \
-    libsndmonitor \
-    libspkrprot \
     libssrec \
     libsurround_3mic_proc \
     libwfdcodecv4l2_proprietary \
