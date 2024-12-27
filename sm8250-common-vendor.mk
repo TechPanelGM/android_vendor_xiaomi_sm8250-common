@@ -30,7 +30,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sm8250-common/proprietary/system_ext/etc/permissions/qti_permissions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/qti_permissions.xml \
     vendor/xiaomi/sm8250-common/proprietary/system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml \
     vendor/xiaomi/sm8250-common/proprietary/system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml \
-    vendor/xiaomi/sm8250-common/proprietary/system_ext/etc/seccomp_policy/wfdservice.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/wfdservice.policy \
     vendor/xiaomi/sm8250-common/proprietary/system_ext/etc/seccomp_policy/wfdservice64.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/wfdservice64.policy \
     vendor/xiaomi/sm8250-common/proprietary/system_ext/etc/wfdconfigsink.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/wfdconfigsink.xml \
     vendor/xiaomi/sm8250-common/proprietary/vendor/etc/cacert_location.pem:$(TARGET_COPY_OUT_VENDOR)/etc/cacert_location.pem \
@@ -108,6 +107,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sm8250-common/proprietary/vendor/etc/init/vendor.qti.rmt_storage.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.rmt_storage.rc \
     vendor/xiaomi/sm8250-common/proprietary/vendor/etc/init/vendor.qti.secure_element@1.2-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.secure_element@1.2-service.rc \
     vendor/xiaomi/sm8250-common/proprietary/vendor/etc/init/vendor.qti.tftp.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.tftp.rc \
+    vendor/xiaomi/sm8250-common/proprietary/vendor/etc/init/vendor.xiaomi.hardware.touchfeature@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.touchfeature@1.0-service.rc \
     vendor/xiaomi/sm8250-common/proprietary/vendor/etc/init/vppservice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vppservice.rc \
     vendor/xiaomi/sm8250-common/proprietary/vendor/etc/izat.conf:$(TARGET_COPY_OUT_VENDOR)/etc/izat.conf \
     vendor/xiaomi/sm8250-common/proprietary/vendor/etc/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
@@ -277,6 +277,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.qseecom@1.0-impl \
     vendor.qti.hardware.qteeconnector@1.0-impl \
     vendor.qti.hardware.soter@1.0-impl \
+    vendor.xiaomi.hardware.touchfeature@1.0-impl \
     jcos_nq_client \
     lib-imscmservice \
     lib-imsdpl \
@@ -513,7 +514,19 @@ PRODUCT_PACKAGES += \
     vendor.qti.latency@2.1 \
     capi_v2_aptX_CLHDADV_Encoder \
     capi_v2_aptX_CLHDAD_Speech_Decoder \
+    com.qualcomm.qti.dpm.api@1.0 \
     com.qualcomm.qti.wifidisplayhal@1.0 \
+    lib-imsvideocodec \
+    lib-imsvt \
+    lib-imsvtextutils \
+    lib-imsvtutils \
+    libdiag_system \
+    libdpmctmgr \
+    libdpmfdmgr \
+    libdpmframework \
+    libdpmtcm \
+    libimscamera_jni \
+    libimsmedia_jni \
     libmmosal \
     libmmparser_lite \
     libmmrtpdecoder \
@@ -526,6 +539,7 @@ PRODUCT_PACKAGES += \
     libwfdmminterface \
     libwfdmmsink \
     libwfdmmsrc_system \
+    libwfdnative \
     libwfdrtsp \
     libwfdservice \
     libwfdsinksm \
@@ -534,21 +548,9 @@ PRODUCT_PACKAGES += \
     libwfduibcsinkinterface \
     libwfduibcsrc \
     libwfduibcsrcinterface \
-    vendor.qti.hardware.wifidisplaysession@1.0 \
-    com.qualcomm.qti.dpm.api@1.0 \
-    lib-imsvideocodec \
-    lib-imsvt \
-    lib-imsvtextutils \
-    lib-imsvtutils \
-    libdiag_system \
-    libdpmctmgr \
-    libdpmfdmgr \
-    libdpmframework \
-    libdpmtcm \
-    libimscamera_jni \
-    libimsmedia_jni \
     vendor.qti.ImsRtpService-V1-ndk \
     vendor.qti.diaghal@1.0 \
+    vendor.qti.hardware.wifidisplaysession@1.0 \
     vendor.qti.imsrtpservice@3.0 \
     vendor.qti.imsrtpservice@3.1 \
     CACertService \
@@ -593,6 +595,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.soter@1.0-service \
     vendor.qti.hardware.tui_comm@1.0-service-qti \
     vendor.qti.secure_element@1.2-service \
+    vendor.xiaomi.hardware.touchfeature@1.0-service \
     ims_rtp_daemon \
     imsdatadaemon \
     imsqmidaemon \
@@ -625,13 +628,14 @@ PRODUCT_PACKAGES += \
     tftp_server \
     thermal-engine \
     time_daemon \
+    toucheventcheck \
     vppservice \
     wifidisplayhalservice \
     xtra-daemon \
     xtwifi-client \
     xtwifi-inet-agent \
     dpmd \
-    wfdservice
+    wfdservice64
 
 PRODUCT_PACKAGES += \
     libEGL_adreno_libEGL_adreno_symlink32 \
